@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="This was a Final project for Programming Interactive Media 2017-Fall." />
+  <meta name="keywords"  content="html, css, programming interactive media, final" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="ALL" />
+
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+  <meta charset=utf-8 />
+  <script src="PIM_final.js"></script>
+
+
+  
+  <link rel="stylesheet" type="text/css" href="PIM_final.css" />
+  <title>GreatMoneyBook</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="logo"><a href="PIM_final.html">모두의 머니</a></h1>
+
+    <form name="login" action="/login.php">
+      아이디 : <input size="15" type="text" name="userid"/>
+      비밀번호 : <input size="15" type="password" name="pswrd"/>
+      <input type="submit" onclick="check(this.form)" value="로그인"/>
+      <button type="register" value="Register"><a href="#">회원가입</button>
+      </form>
+    </header>
+
+
+    <form name="makeMoneyBook">
+      가계부 이름 <input size="width/2" type="text" name="moneyBookName"/><br>
+      가계부 설명 <input size="50" type="text" name="moneyBookDescription"/><br>
+      가계부 시작일 <input type="date" name="moneyBookDate"/><br>
+      섬네일 사진 <input type="file" name="thumbnailImg" onchange="readURL(this)" />
+      <img id="blah" src="#" alt="your image" /><br>
+      <button type="submit"  style="float:right"><a href="moneyBook.html">가계부 생성</a></button><br>
+    </form>
+
+
+
+  </body>
+  </html>

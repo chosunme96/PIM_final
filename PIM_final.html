@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="This was a Final project for Programming Interactive Media 2017-Fall." />
+  <meta name="keywords"  content="html, css, programming interactive media, final" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="ALL" />
+
+  <link rel="stylesheet" type="text/css" href="PIM_final.css" />
+  <title>GreatMoneyBook</title>
+</head>
+
+<body>
+
+
+
+
+
+      <script language="javascript">
+      var count=0;
+      function check(form){
+        if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd"){
+          window.open('target.html');
+        }else{
+          alert("Error Password or Username");
+        }
+      }
+
+      function newMoneyBook(){
+        count++;
+      }
+
+      </script>
+
+
+    </body>
+    </html>
