@@ -91,10 +91,10 @@
       <h1>가계부 생성</h1>
   </header>
 
-      <button class="createMoneyBook" onclick=createMoneyBook()><img src="createMoneyBook.png"></button>
-      <button class="createMoneyBook" onclick=createMoneyBook()><img src="createMoneyBook.png"></button>
-      <button class="createMoneyBook" onclick=createMoneyBook()><img src="createMoneyBook.png"></button>
-      <button class="createMoneyBook" onclick=createMoneyBook()><img src="createMoneyBook.png"></button>
+      <button id="myBtn" class="createMoneyBook" onclick=createMoneyBook()><img class="addMB" src="createMoneyBook.png"></button>
+      <button class="createMoneyBook" onclick=createMoneyBook()><img class="addMB" src="createMoneyBook.png"></button>
+      <button class="createMoneyBook" onclick=createMoneyBook()><img class="addMB" src="createMoneyBook.png"></button>
+      <button class="createMoneyBook" onclick=createMoneyBook()><img class="addMB" src="createMoneyBook.png"></button>
   </div>
 
   <!-- Trigger/Open The Modal -->
@@ -114,35 +114,14 @@
         가계부 설명 : <input type="text" id="mbdescription" /></br></br>
         가계부 생성일 : <input type="date" id="mbdate" /></br></br>
         가계부 색 : <input type="color" id="mbcolor" /></br>
-        <input type="button" id="createMB" value="생성하기" />
+        <button id="createMB" value="생성하기"><a href="myMoneyBook.html">생성하기</button>
       </div>
 
     </div>
 
   </div>
 
-<!--
-    <div data-role="main" class="ui-content">
 
-      <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline createMoneyBook"></a>
-
-
-      <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-        <form method="post" action="/action_page_post.php">
-          <div>
-            <h3>가계부 정보</h3>
-            <label for="mbname" class="ui-hidden-accessible">가계부 이름:</label>
-            <input type="text" name="mbname" id="mbname" placeholder="가계부 이름">
-            <label for="mbdescription" class="ui-hidden-accessible">가계부 설명:</label>
-            <input type="text" name="mbdescription" id="mbdescription" placeholder="가계부 설명">
-            <label for="log">Keep me logged in</label>
-            가계부 생성 날짜 : <input type="date" name="createdate" id="createdate">
-            <input type="submit" data-inline="true" value="생성">
-          </div>
-        </form>
-      </div>
-    </div>
--->
 
 
 <script>
@@ -175,143 +154,3 @@ window.onclick = function(event) {
 
     </body>
     </html>
-
-
-
-    <!--
-
-    <!DOCTYPE html>
-<html>
-<head>
-<style>
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 70px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    position: relative;
-    background-color: white;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    border-radius:20px;
-    width: 60%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 10px 1px 10px;
-    border-radius:10px 10px 0px 0px;
-    background-color: skyblue;
-    color: white;
-    text-align:center;
-}
-
-.modal-body {
-	padding: 10px 10px;
-
-    }
-
-
-</style>
-</head>
-<body>
-
-// Trigger/Open The Modal
-<button id="myBtn">Open Modal</button>
-
-// The Modal //
-<div id="myModal" class="modal">
-
-  // Modal content //
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>가계부 생성</h2>
-    </div>
-    <div class="modal-body">
-      가계부 이름 : <input type="text" id="mbname"></br></br>
-      가계부 설명 : <input type="text" id="mbdescription"></br></br>
-      가계부 생성일 : <input type="date" id="mbdate"></br></br>
-      가계부 색 : <input type="color" id="mbcolor"></br>
-      <input type="button" id="createMB" value="생성하기">
-    </div>
-
-  </div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-</body>
-</html>
-
--->
