@@ -8,15 +8,15 @@ var user(id, pswrd){
 function check(){
   var id=document.getElementById("userid").value;
   var password=document.getElementById("userpswrd").value;
-  if(id=='userid' && password='userpswrd'){
-    window.open('PIM_final.html');
+  if(id=='testid' && password='testpswrd'){
+    window.open("PIM_final.html");
   }else{
     alert("Error Password or Username");
   }
 }
 
 function createMoneyBook(){
-  
+
 
 
 }
