@@ -1,14 +1,12 @@
-function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
+var count=0;
+function check(form){
+  if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd"){
+    window.open('PIM_final.html');
+  }else{
+    alert("Error Password or Username");
+  }
+}
 
-            reader.onload = function (e) {
-                $('#blah')
-                    .attr('src', e.target.result)
-                    .width(150)
-                    .height(200);
-            };
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
+function newMoneyBook(){
+  count++;
+}
