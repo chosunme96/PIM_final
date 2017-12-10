@@ -34,9 +34,9 @@ header.login{
   width:50%
 }
 
-/* 가계부 생성 페이지 header */
+/* 가계부 생성 페이지 header   #49205E */
 header.createMB, header.myMB{
-  background-color: skyblue;
+  background-color: #295F89;
   height:60px;
   text-align :center;
 }
@@ -53,12 +53,7 @@ a{
   color:black;
 }
 
-div.makeOrFind{
-  margin-top:30px;
-  margin-left:20px;
 
-
-}
 
 
 form[name="makeMoneyBook"]{
