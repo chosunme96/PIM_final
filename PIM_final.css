@@ -25,6 +25,7 @@ header.login{
   height: 240px;
   width:50%
 }
+
 /* 가계부 생성 페이지 header */
 header.createMB{
   background-color: skyblue;
