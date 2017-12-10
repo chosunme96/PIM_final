@@ -1,12 +1,17 @@
 var count=0;
-function check(form){
-  if(form.userid.value == "myuserid" && form.pswrd.value == "mypswrd"){
+
+var user(id, pswrd){
+  this.id=id;
+  this.pswrd=pswrd;
+}
+
+function check(){
+  var id=document.getElementById("userid").value;
+  var password=document.getElementById("userpswrd").value;
+  if(id=='userid' && password='userpswrd'){
     window.open('PIM_final.html');
   }else{
     alert("Error Password or Username");
   }
-}
 
-function newMoneyBook(){
-  count++;
 }
