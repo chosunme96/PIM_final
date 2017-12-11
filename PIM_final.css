@@ -90,9 +90,8 @@ button.createMoneyBook{
   align-items:center;
 }
 
-.
 
-img.addMB, img.addCard{
+img.addMB{
   width:100%;
   height:100%;
 }
@@ -136,9 +135,6 @@ div.mywallet{
   border-top-left-radius:10px;
   border-top-right-radius: 10px;
   display:block;
-  border:none;
-  align-items: center;
-  background-size:cover;
 }
 
 
