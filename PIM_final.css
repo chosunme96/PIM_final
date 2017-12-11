@@ -117,24 +117,24 @@ div.mywallet{
   margin-top:20px;
   border-radius:10px;
   padding:10px 0px;
-  padding-bottom:74%;
   background-color:orange;
   position:relative;
   max-height:500px;
 }
 /* div의 padding의 maximum을 설정하는 방법은 없나?*/
 
-button.addcard{
+.addcard1, .addcard2, .addcard3{
   position:relative;
   width:28%;
   max-width:150px;
   height:15%;
   margin-left:8%;
-  top:35%;
-  padding-bottom:9%;
+  padding-bottom:7%;
   margin-left:10%;
+  margin-top:6%;
   border-top-left-radius:10px;
   border-top-right-radius: 10px;
+  display:block;
 }
 
 
