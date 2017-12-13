@@ -171,12 +171,15 @@ div.mywalletinner{
     border-radius:100%;
     width:50px;
     height:50px;
+    margin-top:20px;
     border:2px solid black;
     display:inline-block;
 }
 .containingbutton{
   margin:auto;
   display:block;
+  margin-top:20px;
+  margin-bottom:20px;
 
 }
 .earning{
