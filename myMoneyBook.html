@@ -20,21 +20,55 @@
 
 
     <div class="selectChannel">
-      <button> 수입/지출 </button>
-      <button> 예상 예산 </button>
-      <button> 체크리스트 </button>
+      <button autofocus> 수입/지출 </button>
+      <button ><a href="planmoney.html"> 예상 예산 </a></button>
+      <button><a href="checklist.html"> 체크리스트 </a></button>
     </div>
 
  <!--지갑 이미지 넣기 -->
     <div class="mywallet">
       <div class="mywalletinner">
-        <button class="addcard1"></button>
-        <button class="addcard2" onclick="addbutton()" ></button>
-        <button class="addcard3" style="display:none;"></button>
-        <button class="addcard4" style="display:none;"></button>
+        <button class="addcard1" id="myBtn"></button>
+        <button class="addcard2"></button>
+        <button class="addcard3"></button>
+        <button class="addcard4"></button>
         <button class="addcard5" style="display:none;"></button>
-        <button class="addmoney" style="z-index:2"></button>
-        <div style="z-index:3; border:2px solid black"> </div>
+        <button class="addmoney"></button>
+
+        <div class="contents">
+          <div class="summary">
+            <h6>잔액 : </h6>
+            <h6></h6>
+          </div>
+
+          <div class="pocket">
+
+          </div>
+      </div>
+
+      </div>
+
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>카드 추가하기</h2>
+        </div>-->
+        <div class="modal_card">
+            <span class="close">&times;</span>
+        <div class="modal-body_card">
+          <img src="credit-card.png" class="cc">
+
+          <button id="addCard" value="추가하기"></button>
+
+        </div>
+        </div>
+
       </div>
 
     </div>
@@ -44,7 +78,38 @@
 
     </div>
 
+    <div style="width:100%; height:100px; border:2px solid black" class="testing">
 
+
+    </div>
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
 
 
 

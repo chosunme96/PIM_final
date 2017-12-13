@@ -165,7 +165,6 @@ div.mywalletinner{
 }
 
 .earning, .spending{
-
     border-radius:100%;
     width:50px;
     height:50px;
@@ -177,9 +176,6 @@ div.mywalletinner{
   display:block;
 
 }
-.earning, .spending{
-  margin:30px;
-}
 .earning{
   background-color:green;
   display:block;
@@ -189,7 +185,35 @@ div.mywalletinner{
   background-color:red;
 }
 
+.summary{
+    border:2px solid black;
+    position:absolute;
+    width:80%;
+    height:60%;
+    margin:10px;
+    background-color:blue;
+}
+.pocket{
+  width:85%;
+  height:25%;
+  float:right;
+  margin-left:25%;
+  background-color:red;
+  position:relative;
+  top:190px;
+  border:2px solid black;
 
+}
+.contents{
+  border:2px solid black;
+  position:absolute;
+  width:50%;
+  height:100%;
+  top:0;
+  left:50%;
+
+
+}
 
 
 
@@ -261,5 +285,20 @@ div.mywalletinner{
 
 .modal-body {
 	padding: 10px 10px;
-
     }
+
+.modal-body_card{
+    border:none;
+    background-size:cover;
+    align-items:center;
+    }
+
+img.cc{
+  width:80%;
+  height:100%;
+}
+.modal_card{
+  width:60%;
+  margin:auto;
+  
+}
