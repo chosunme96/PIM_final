@@ -17,11 +17,12 @@
     <h1 class="logo"><a href="createMoneyBook.html">투게더월릿</a></h1>
 
     <form type="login" style="font-size : 20px">
-      아이디 : <input size="15" type="id" id="userid" value=''/></br>
-      비밀번호 : <input size="15" type="password" id="userpswrd" value=''/></br>
-      <input type="submit" onclick="check()" value="Log in"/>
+      <input size="15" type="id" id="userid" value='ID' onfocus="if(this.value == 'ID') {this.value=''}" onblur="if(this.value== ''){this.value ='ID'}"></br>
+      <input size="15" type="password" id="userpswrd" value='PASSWORD' onfocus="if(this.value == 'PASSWORD') {this.value=''}" onblur="if(this.value== ''){this.value ='PASSWORD'}"></br>
+      <input type="button" onclick="check()" value="Log in"/>
       <button type="register" value="Register"><a href="createMoneyBook.html">회원가입</button>
     <form>
+      <p id="test">hello</p>
 
     </header>
 

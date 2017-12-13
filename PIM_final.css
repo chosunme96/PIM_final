@@ -96,7 +96,7 @@ img.addMB{
   height:100%;
 }
 
-
+/*
 img.mywallet{
   width:90%;
   height:auto;
@@ -107,35 +107,90 @@ img.mywallet{
   display:block;
   position:absolute;
 }
+*/
 
 div.mywallet{
   vertical-align:middle;
   margin:auto;
   display:block;
-  width:90%;
+  padding-bottom:70px;
+  width:80%;
   max-width:440px;
   margin-top:20px;
   border-radius:10px;
-  padding:10px 0px;
-  background-color:orange;
+  border:2px solid black;
   position:relative;
+  min-height:250px;
   max-height:500px;
+  padding:15px 0px;
 }
+
+div.mywalletinner{
+  vertical-align:middle;
+  margin:auto;
+  display:block;
+  width:90%;
+  min-height:250px;
+  border-radius:10px;
+  border:2px solid black;
+  position:relative;
+}
+
 /* div의 padding의 maximum을 설정하는 방법은 없나?*/
 
-.addcard1, .addcard2, .addcard3{
+.addcard1, .addcard2, .addcard3, .addcard4, .addcard5, .addcard6{
   position:relative;
-  width:28%;
+  width:30%;
   max-width:150px;
   height:15%;
+  padding-bottom:3%;
+  padding-top:4%;
   margin-left:8%;
-  padding-bottom:7%;
-  margin-left:10%;
-  margin-top:6%;
+  margin-top:8%;
+  margin-bottom:5%;
   border-top-left-radius:10px;
   border-top-right-radius: 10px;
   display:block;
+  border-bottom-width: thick;
 }
+
+.addmoney{
+  position:absolute;
+  width:5%;
+  height:95%;
+  top:5px;
+  left:45%;
+  background-color:green;
+  border:none;
+}
+
+.earning, .spending{
+
+    border-radius:100%;
+    width:50px;
+    height:50px;
+    border:2px solid black;
+    display:inline-block;
+}
+.containingbutton{
+  margin:auto;
+  display:block;
+
+}
+.earning, .spending{
+  margin:30px;
+}
+.earning{
+  background-color:green;
+  display:block;
+  margin:auto;
+}
+.spending{
+  background-color:red;
+}
+
+
+
 
 
 
