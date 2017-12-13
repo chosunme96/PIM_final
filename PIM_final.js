@@ -1,9 +1,6 @@
 var count=0;
 
-var user(id, pswrd){
-  this.id=id;
-  this.pswrd=pswrd;
-}
+
 
 var mb=[];
 function moneyBook(name, description, date, color){
@@ -40,7 +37,7 @@ function changestatus(){
 
 
 
-
+/*
 // Write JavaScript here
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -67,3 +64,4 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 };
+*/
