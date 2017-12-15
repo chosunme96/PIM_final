@@ -9,9 +9,10 @@ body, html{
   scroll-behavior: smooth;
   width:100%;
   height:100%;
+  background-color:#ff9999;
 }
 div{
-  overflow:auto;
+  overflow-y:auto;
 }
 div.selectChannel{
   margin-top:20px;
@@ -20,6 +21,7 @@ div.selectChannel{
 div.mywallet{
   margin-top:30px;
   max-width:500px;
+
 
 }
 
@@ -271,7 +273,11 @@ div.mywalletinner{
 }
 ul{list-style:none;}
 li{display:inline-block;
+  text-align:center;
   margin:10px;}
+ul.menu{
+  text-align:center;
+}
 
 a{
     text-decoration:none;
@@ -280,10 +286,7 @@ a{
 a:hover{
     text-decoration:underline;
 }
-a:active{
-  text-decoration:underline;
 
-}
 .addMoneyBook{
   width:80%;
   height:30%;

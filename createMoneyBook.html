@@ -13,40 +13,36 @@
 </head>
 
 <body>
-  <div class="login logo">
-    <header class="menubar">
+    <header class="menu">
       <ul>
-        <li style="text-decoration:underline"><a href="createMoneyBook.html">My MoneyBook</a></li>
+        <li autofocus, style="text-decoration:underline; font-size:20px"><a href="createMoneyBook.html">My MoneyBook</a></li>
         <li><a href="searchMoneyBook.html">Other's MoneyBook</li>
       </ul>
     </header>
 
+    <div class="selectChannel">
+      <button autofocus, style="display:none"> My MoneyBook</button>
+      <button style="display:none"><a href="searchMoneyBook.html">Other's MoneyBook </a></button>
+
+    </div>
+
     <button class="greenbuttons addMoneyBook" onclick=createMoneyBook()>
+      <!--  <a href="myMoneyBook.html">  -->
       <!-- <img class="addMB" src="pluscard.png"> -->
       개인 가계부
     </button>
-    <button class="greenbuttons addMoneyBook" onclick=createMoneyBook()>
-      <!-- <img class="addMB" src="pluscard.png"> -->
-      2017년 2학기 다카포
-    </button>
+
     <button class="greenbuttons addMoneyBook" onclick=createMoneyBook()>
       <!-- <img class="addMB" src="pluscard.png"> -->
       2017년 2학기 공상
     </button>
 
-    <button id="myBtn" class="greenbuttons addMoneyBook" onclick=createMoneyBook()>
+    <button id="myBtn" class="greenbuttons addMoneyBook">
         <!-- <img class="addMB" src="pluscard.png"> -->
         +
     </button>
 
-
-
 </div>
-
-
-
-
-
   <!-- The Modal -->
   <div id="myModal" class="modal">
 
@@ -63,13 +59,8 @@
         가계부 색 : <input type="color" id="mbcolor" /></br>
         <button id="createMB" value="생성하기"><a href="myMoneyBook.html">생성하기</button>
         </div>
-
       </div>
-
     </div>
-
-
-
 
     <script>
     // Get the modal

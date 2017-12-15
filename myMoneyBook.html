@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="This was a Final project for Programming Interactive Media 2017-Fall." />
-    <meta name="keywords"  content="html, css, programming interactive media, final" />
-    <meta name="viewport" content="width=380, user-scalable=no, maximum-scale=400px">
-    <meta name="robots" content="ALL" />
-    <link rel="stylesheet" type="text/css" href="PIM_final.css" />
-    <script type="text/javascript" src="PIM_final.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="This was a Final project for Programming Interactive Media 2017-Fall." />
+  <meta name="keywords"  content="html, css, programming interactive media, final" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+  <meta name="robots" content="ALL" />
+
+  <link rel="stylesheet" type="text/css" href="PIM_final.css" />
+  <script src="PIM_final.js"></script>
   <title>GreatMoneyBook</title>
-
-
 </head>
 
 <body>
   <script type="text/javascript" src="PIM_final.js"></script>
-  <header class="myMB">
-      <h3>2017년 2학기 다카포</h3>
+  <header>
+    <ul class="menu">
+      <li autofocus, style="text-decoration:underline; font-size:20px"><a href="myMoneyBook.html">입금/출금</a></li>
+      <li><a href="planmoney.html">예상 예산</li>
+      <li><a href="checklist.html">메모</li>
+    </ul>
   </header>
 
 
     <div class="selectChannel">
-      <button autofocus> 수입/지출 </button>
-      <button ><a href="planmoney.html"> 예상 예산 </a></button>
-      <button><a href="checklist.html"> 체크리스트 </a></button>
+      <button autofocus style="display:none"> 입금/출금</button>
+      <button  style="display:none"><a href="planmoney.html"> 예상 예산 </a></button>
+      <button style="display:none"><a href="checklist.html"> 체크리스트 </a></button>
     </div>
 
  <!--지갑 이미지 넣기 -->

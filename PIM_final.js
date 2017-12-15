@@ -1,6 +1,11 @@
 var count=0;
+console.log("helloworld");
 
+function checkingfunction(id){
+  console.log("loading function");
+  console.log(id);
 
+}
 
 var mb=[];
 function moneyBook(name, description, date, color){
