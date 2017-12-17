@@ -16,12 +16,42 @@
   <div class="login logo">
     <header class="menubar">
       <ul>
-        <li><a href="myMoneyBook.html">입금/출금 내역</a></li>
-        <li><a href="planmoney.html">예상 예산</li>
-        <li style="text-decoration:underline; font-size:20px"><a href="checklist.html">메모</li>
-      </ul>
-    </header>
+        <li><a href="myMoneyBook.html">수입/지출</a></li>
+        <li><a href="planmoney.html">예산</li>
+          <li style="text-decoration:underline; font-size:20px"><a href="checklist.html">메모</li>
+          </ul>
+        </header>
 
 
-</body>
-</html>
+        <div id="wrap">
+          <h1>Stylish User Settings Menu</h1>
+
+          <div id="dropdown" class="ddmenu">
+            User Settings
+            <ul>
+              <li><a href="#">My Profile</a></li>
+              <li><a href="#">Friend Requests</a></li>
+              <li><a href="#">Account Settings</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+<script>
+$("#dropdown").on("click", function(e){
+  e.preventDefault();
+
+  if($(this).hasClass("open")) {
+    $(this).removeClass("open");
+    $(this).children("ul").slideUp("fast");
+  } else {
+    $(this).addClass("open");
+    $(this).children("ul").slideDown("fast");
+  }
+});
+</script>
+
+      </body>
+      </html>

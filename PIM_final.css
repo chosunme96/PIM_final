@@ -1,9 +1,10 @@
 /* html, header, h1, form{
-  border:2px solid black;
+border:2px solid black;
 }
 */
 
 body, html{
+  margin:0;
   overflow-x:hidden;
   overflow-y:auto;
   scroll-behavior: smooth;
@@ -21,8 +22,14 @@ div.selectChannel{
 div.mywallet{
   margin-top:30px;
   max-width:500px;
-
-
+}
+img.walletimg{
+  width:100%;
+  height:auto;
+}
+img.card{
+  width:100%;
+  height:auto;
 }
 
 .login{
@@ -97,7 +104,7 @@ header.myMB{
 }
 
 .greenbuttons:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 a{
@@ -155,14 +162,14 @@ img.addMB{
 
 /*
 img.mywallet{
-  width:90%;
-  height:auto;
-  max-width:400px;
-  vertical-align:middle;
-  margin:auto;
-  margin-left:5%;
-  display:block;
-  position:absolute;
+width:90%;
+height:auto;
+max-width:400px;
+vertical-align:middle;
+margin:auto;
+margin-left:5%;
+display:block;
+position:absolute;
 }
 */
 
@@ -172,15 +179,15 @@ div.mywallet{
   display:block;
   padding-bottom:70px;
   width:80%;
-  max-width:440px;
+  max-width:500px;
   margin-top:20px;
   border-radius:10px;
-  border:2px solid black;
+  overflow:hidden;
   position:relative;
   min-height:250px;
   max-height:500px;
   padding:15px 0px;
-  background-color:brown;
+
 }
 
 div.mywalletinner{
@@ -190,24 +197,19 @@ div.mywalletinner{
   width:90%;
   min-height:250px;
   border-radius:10px;
-  border:2px solid black;
-  position:relative;
-  background-color:darkgoldenrod;
 
+  position:relative;
 }
 
 /* div의 padding의 maximum을 설정하는 방법은 없나?*/
 
-.addcard1, .addcard2, .addcard3, .addcard4, .addcard5, .addcard6{
-  position:relative;
-  width:30%;
+.addcard{
+  width:60%;
   max-width:150px;
-  height:15%;
-  padding-bottom:3%;
-  padding-top:4%;
-  margin-left:8%;
-  margin-top:8%;
-  margin-bottom:5%;
+  height:10%;
+  padding:4%;
+  margin-left:22%;
+  margin-top:5%;
   border-top-left-radius:10px;
   border-top-right-radius: 10px;
   display:block;
@@ -225,22 +227,20 @@ div.mywalletinner{
 }
 
 .earning, .spending{
-    border-radius:100%;
-    width:50px;
-    height:50px;
-    margin-top:20px;
-    border:2px solid black;
-    display:inline-block;
+  border-radius:100%;
+  width:70px;
+  height:70px;
+  margin-top:5px;
+  display:inline-block;
 }
 .containingbutton{
   margin:auto;
   display:block;
-  margin-top:20px;
+  margin-top:5px;
   margin-bottom:20px;
 
 }
 .earning{
-  background-color:green;
   display:block;
   margin:auto;
 }
@@ -249,11 +249,12 @@ div.mywalletinner{
 }
 
 .summary{
-    border:2px solid black;
-    position:absolute;
-    width:80%;
-    height:60%;
-    margin:10px;
+  border:2px solid black;
+  position:absolute;
+  width:80%;
+  height:60%;
+  margin:10px;
+    padding:10px;
 }
 .pocket{
   width:85%;
@@ -267,37 +268,48 @@ div.mywalletinner{
 .contents{
   position:absolute;
   width:50%;
-  height:100%;
-  top:0;
+  height:90%;
+  top:10%;
   left:50%;
+  margin:10px;
+
+}
+.buttons{
+  position:absolute;
+  width:50%;
+  height:100%;
+  top:30px;
+  left:0%;
+
 }
 ul{list-style:none;}
 li{display:inline-block;
   text-align:center;
   margin:10px;}
-ul.menu{
-  text-align:center;
-}
-
-a{
+  ul.menu{
+    text-align:center;
+  }
+  a{
     text-decoration:none;
     color:white;
-}
-a:hover{
+  }
+  a:hover{
     text-decoration:underline;
-}
-
-.addMoneyBook{
-  width:80%;
-  height:30%;
-  margin-bottom:30px;
-}
+  }
 
 
 
+  .addMoneyBook{
+    width:80%;
+    height:30%;
+    margin-bottom:30px;
+  }
 
-/* The Modal (background) */
-.modal {
+
+
+
+  /* The Modal (background) */
+  .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -309,10 +321,10 @@ a:hover{
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+  }
 
-/* Modal Content */
-.modal-content {
+  /* Modal Content */
+  .modal-content {
     position: relative;
     background-color: white;
     margin: auto;
@@ -325,58 +337,81 @@ a:hover{
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
     animation-duration: 0.4s
-}
+  }
+  .modal_card{
+    position: relative;
+    margin: auto;
+    padding: 0;
+    border-radius:20px;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+  }
 
-/* Add Animation */
-@-webkit-keyframes animatetop {
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
-}
+  }
 
-@keyframes animatetop {
+  @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
-}
+  }
 
-/* The Close Button */
-.close {
+  /* The Close Button */
+  .close {
     color: white;
     float: right;
+    margin-right:10px;
     font-size: 20px;
     font-weight: bold;
-}
+  }
 
-.close:hover,
-.close:focus {
+  .close:hover,
+  .close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
+  }
 
-.modal-header {
+  .modal-header {
     padding: 2px 10px 1px 10px;
     border-radius:10px 10px 0px 0px;
     background-color: skyblue;
     color: white;
     text-align:center;
-}
+  }
 
-.modal-body {
-	padding: 10px 10px;
-    }
+  .modal-body {
+    padding: 10px 10px;
+    align-items: center;
+    text-align:center;
+  }
 
-.modal-body_card{
-    border:none;
+  input[type="text"], input[type="date"]{
+    border-radius:5px;
+    margin:3px;
+  }
+
+  .modal_card_body{
+    position:absolute;
+    top:30%;
     background-size:cover;
     align-items:center;
-    margin-left:20%;
-    }
+    margin-left:10%;
 
-img.cc{
-  width:80%;
-  height:100%;
-}
-.modal_card{
-  width:60%;
-  margin:auto;
-}
+  }
+
+  img.cc{
+    width:80%;
+    height:100%;
+  }
+  .modal_card{
+    overflow-y:hidden;
+    width:80%;
+    max-width:300px;
+    height:auto;
+    margin:auto;
+  }

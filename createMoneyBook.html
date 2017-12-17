@@ -13,6 +13,7 @@
 </head>
 
 <body>
+  <div class="login logo">
     <header class="menu">
       <ul>
         <li autofocus, style="text-decoration:underline; font-size:20px"><a href="createMoneyBook.html">My MoneyBook</a></li>
@@ -23,22 +24,19 @@
     <div class="selectChannel">
       <button autofocus, style="display:none"> My MoneyBook</button>
       <button style="display:none"><a href="searchMoneyBook.html">Other's MoneyBook </a></button>
-
     </div>
 
     <button class="greenbuttons addMoneyBook" onclick=createMoneyBook()>
-      <!--  <a href="myMoneyBook.html">  -->
+      <!-- <a href="myMoneyBook.html"> -->
       <!-- <img class="addMB" src="pluscard.png"> -->
       개인 가계부
     </button>
 
     <button class="greenbuttons addMoneyBook" onclick=createMoneyBook()>
-      <!-- <img class="addMB" src="pluscard.png"> -->
       2017년 2학기 공상
     </button>
 
     <button id="myBtn" class="greenbuttons addMoneyBook">
-        <!-- <img class="addMB" src="pluscard.png"> -->
         +
     </button>
 
@@ -50,14 +48,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <span class="close">&times;</span>
-        <h2>가계부 생성</h2>
+        <h2>가계부 추가하기</h2>
       </div>
       <div class="modal-body">
         가계부 이름 : <input type="text" id="mbname" /></br></br>
-        가계부 설명 : <input type="text" id="mbdescription" /></br></br>
-        가계부 생성일 : <input type="date" id="mbdate" /></br></br>
-        가계부 색 : <input type="color" id="mbcolor" /></br>
-        <button id="createMB" value="생성하기"><a href="myMoneyBook.html">생성하기</button>
+        설명 : <input type="text" id="mbdescription" /></br></br>
+        
+        모양 고르기 : </br></br>
+        <button class="greenbuttons" value="생성하기"><a href="myMoneyBook.html">생성하기</button>
         </div>
       </div>
     </div>

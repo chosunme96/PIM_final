@@ -35,13 +35,12 @@ function createMoneyBook(){
 }
 
 function changestatus(){
-  var status=document.getElementsByClassName("earning");
-  if(status.value=="수입") {
-    status.value="지출";
-    status.style.background="red";
+  var status=document.getElementById("earning");
+  if(status.innerHTML=="수입") {
+    status.innerHTML="지출";
   }else {
-    status.value="수입";
-    status.style.background="green";
+    status.innerHTML="수입";
+
   }
 }
 
