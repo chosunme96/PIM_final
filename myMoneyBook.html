@@ -6,7 +6,7 @@
   <meta name="keywords"  content="html, css, programming interactive media, final" />
   <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
   <meta name="robots" content="ALL" />
-
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="PIM_final.css" />
   <script src="PIM_final.js"></script>
   <title>GreatMoneyBook</title>
@@ -21,7 +21,7 @@
         <li><a href="checklist.html">메모</li>
         </ul>
 
-        
+
       </header>
 
       <div class="selectChannel">
@@ -35,7 +35,7 @@
         <div class="mywallet">
           <img class="walletimg" src="walletchoice1.png">
           <div class="buttons">
-            <button class="addcard" id="myBtn"></button>
+            <button class="addcard" id="myBtn" draggable="true" ondgragstart="drag(event)"></button>
             <button class="addcard"></button>
             <!--<button class="addcard"></button>
             <button class="addcard"></button>
@@ -64,22 +64,40 @@
         <span class="close1">&times;</span>
         <img src="credit-card.png" class="card">
         <div class="modal_card_body" style="z-index:2">
-          <p>helloworld</p>
-
           <form>
+            dropdown : 금융사 이름;
+            계좌, 카드의 별명을 지어주세요!
           </form>
-
         </div>
       </div>
 
     </div>
 
-  </div>
+    <div id="MoneyFlow" class="modal" style="display:none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close2" onclick="closeMoneyFlow()">&times;</span>
+          <h2>card name 거래 추가</h2>
+        </div>
+        <div class="modal-body">
+          분류 : <input type="text" id="transCategory"/></br></br>
+          날짜 : <input type="date" id="transDate"/></br></br>
+          금액 : <input type="text" id="transAmount"/></br></br>
+          영수증 : <input type="file" id="transReceipt"/></br></br>
+          <input type="submit" value="내역 추가" class="greenbuttons" onclick="addTrans()">
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div class="containingbutton">
-    <button type="button" class="earning greenbuttons" id="earning" onclick="changestatus()"/>
-    수입
-  </button>
+    <div class="containingbutton">
+      <button type="button" class="earning" id="earning"
+      onclick="changestatus(this)" ondrop="drop(event)" ondragover="allowDrop(event)">
+      수입
+    </button>
+    <button type="button" class="spending" id="spending"
+    onclick="changestatus(this)" ondrop="drop(event)" ondragover="allowDrop(event)">
+    지출</button>
   </div>
 
   <div style="width:100%; height:100px; border:2px solid black" class="testing">
@@ -97,6 +115,7 @@
 
   // Get the <span> element that closes the modal
   var span = document.getElementsByClassName("close1")[0];
+  var span2=document.getElementsByClassName
 
   // When the user clicks the button, open the modal
   btn.onclick = function() {
@@ -116,9 +135,6 @@
     }
 
   }
-
-
-
 
 
 

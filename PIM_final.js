@@ -44,6 +44,50 @@ function changestatus(){
   }
 }
 
+function allowDrop(ev){
+  ev.preventDefault();
+}
+function drag(ev){
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function addTrans(){
+ var category=document.getElementById('transCategory').value;
+ console.log(category);
+ var transdate=document.getElementById('transDate').value;
+ console.log(transdate);
+  var amount = document.getElementById('transAmount').value;
+  console.log(amount);
+  var file=document.getElementById('transReceipt').image;
+
+
+
+}
+
+
+
+function closeMoneyFlow(){
+  var modal=document.getElementById("MoneyFlow");
+  modal.style.display="none";
+}
+
+function drop(ev){
+  ev.preventDefault();
+  console.log(ev.target.id);
+  var modal=document.getElementById("MoneyFlow");
+  var span=document.getElementsByClassName("close2")[0];
+
+  modal.style.display="block";
+
+  if(ev.target.id=="earning"){
+    console.log("earning");
+
+  }else if(ev.target.id=="spending"){
+    console.log("spending");
+  }
+  console.log("what");
+}
+
 
 $(document).ready(function(){
   $(".memobutton").click(function(){
@@ -54,7 +98,6 @@ $(document).ready(function(){
     }
   });
 });
-
 
 
 // Create a "close" button and append it to each list item
@@ -78,8 +121,10 @@ for (i = 0; i < close.length; i++) {
   };
 }
 
+//Problem Place
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
+console.log(list);
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
@@ -131,33 +176,3 @@ function setMemoType(memot){
   }
 
 }
-
-
-/*
-// Write JavaScript here
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal
-btn.onclick = function() {
-modal.style.display = "block";
-};
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-if (event.target == modal) {
-modal.style.display = "none";
-}
-};
-*/

@@ -238,11 +238,9 @@ div.mywalletinner{
   display:block;
   margin-top:5px;
   margin-bottom:20px;
-
 }
 .earning{
-  display:block;
-  margin:auto;
+  background-color:#008080;
 }
 .spending{
   background-color:red;
@@ -321,7 +319,19 @@ ul.menu li{display:inline-block;
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
 
-  /* Modal Content */
+  /* Modal <div id="MoneyFlow" class="modal-content" style="display:none">
+    <div class="modal-header">
+      <span class="close2">&times;</span>
+      <h2>거래 내역 추가</h2>
+    </div>
+    <div class="modal-body">
+      사용 금액: <input type="text" id="mbname" /></br></br>
+      사용 내역 : <input type="text" id="mbdescription" /></br></br>
+
+      모양 고르기 : </br></br>
+      <button class="greenbuttons" value="생성하기"><a href="myMoneyBook.html">생성하기</button>
+      </div>
+    </div>Content */
   .modal-content {
     position: relative;
     background-color: white;
@@ -359,7 +369,7 @@ ul.menu li{display:inline-block;
   }
 
   /* The Close Button */
-  .close1 {
+  .close1, .close2 {
     color: white;
     float: right;
     margin-right:10px;
@@ -368,7 +378,8 @@ ul.menu li{display:inline-block;
   }
 
   .close1:hover,
-  .close1:focus {
+  .close1:focus, .close2:hover,
+  .close2:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
