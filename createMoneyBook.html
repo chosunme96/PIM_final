@@ -15,7 +15,7 @@
 <body>
   <div class="login logo">
     <header class="menu">
-      <ul>
+      <ul class="menu">
         <li autofocus, style="text-decoration:underline; font-size:20px"><a href="createMoneyBook.html">My MoneyBook</a></li>
         <li><a href="searchMoneyBook.html">Other's MoneyBook</li>
       </ul>
@@ -47,13 +47,13 @@
     <!-- Modal content -->
     <div class="modal-content">
       <div class="modal-header">
-        <span class="close">&times;</span>
+        <span class="close1">&times;</span>
         <h2>가계부 추가하기</h2>
       </div>
       <div class="modal-body">
         가계부 이름 : <input type="text" id="mbname" /></br></br>
         설명 : <input type="text" id="mbdescription" /></br></br>
-        
+
         모양 고르기 : </br></br>
         <button class="greenbuttons" value="생성하기"><a href="myMoneyBook.html">생성하기</button>
         </div>
@@ -68,7 +68,7 @@
     var btn = document.getElementById("myBtn");
 
     // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementsByClassName("close1")[0];
 
     // When the user clicks the button, open the modal
     btn.onclick = function() {

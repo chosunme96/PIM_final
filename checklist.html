@@ -8,6 +8,7 @@
   <meta name="robots" content="ALL" />
 
   <link rel="stylesheet" type="text/css" href="PIM_final.css" />
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="PIM_final.js"></script>
   <title>GreatMoneyBook</title>
 </head>
@@ -15,43 +16,65 @@
 <body>
   <div class="login logo">
     <header class="menubar">
-      <ul>
+      <ul class="menu">
         <li><a href="myMoneyBook.html">수입/지출</a></li>
         <li><a href="planmoney.html">예산</li>
           <li style="text-decoration:underline; font-size:20px"><a href="checklist.html">메모</li>
           </ul>
         </header>
 
+        <div class="selectChannel">
+          <button autofocus style="display:none">수입/지출</button>
+          <button  style="display:none"><a href="planmoney.html"> 예상 예산 </a></button>
+          <button style="display:none"><a href="checklist.html"> 메모 </a></button>
+        </div>
 
-        <div id="wrap">
-          <h1>Stylish User Settings Menu</h1>
+        <div class="memolist" style="border:2px solid black">
+          <button class="memobutton"> </button>
+          <button class="memobutton"> </button>
+          <button class="memobutton"> </button>
 
-          <div id="dropdown" class="ddmenu">
-            User Settings
-            <ul>
-              <li><a href="#">My Profile</a></li>
-              <li><a href="#">Friend Requests</a></li>
-              <li><a href="#">Account Settings</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Log Out</a></li>
-            </ul>
+        </div>
+
+        <div id="memobox" style="margin:auto; display:none;" >
+
+          <div id="myDIV" class="header">
+            <div style="text-align:left">
+            <input type="checkbox" id="normalmemo" checked onchange="setMemoType(this)">메모</input></br/>
+            <input type="checkbox" id="checklist" onchange="setMemoType(this)">체크 리스트  </input/>
           </div>
+            <h2 style="margin:20px 0 5px 0; text-align:center" id="memotype"> 메모 </h2>
+
+            <div id="checklistpart" style="display:none">
+              <input type="text" id="myInput" placeholder="Title...">
+              <span onclick="newElement()" class="addBtn" id="addList">Add</span>
+            </div>
+          </div>
+
+          <form id="memopart">
+            <textarea placeholder="Write Memo" id="memoArea" rows="4" cols="50" class="memotext"></textarea>
+
+            <button onclick="newMemo()" class="memoBtn" id="addList">메모 추가하기 </button>
+          </form>
+
+
+          <ul id="myUL" class="cl" style="display:none">
+            <li>추가하고 싶은 것이 있다면</li>
+            <li>빈칸 안에 적어주세요</li>
+            <li class="checked">할 일을 다 하면 줄을 눌러주세요</li>
+            <button onclick="newMemo()" class="memoBtn" id="addList">메모 추가하기</button>
+          </ul>
+
+
+
         </div>
 
 
-<script>
-$("#dropdown").on("click", function(e){
-  e.preventDefault();
 
-  if($(this).hasClass("open")) {
-    $(this).removeClass("open");
-    $(this).children("ul").slideUp("fast");
-  } else {
-    $(this).addClass("open");
-    $(this).children("ul").slideDown("fast");
-  }
-});
-</script>
 
-      </body>
-      </html>
+
+
+
+      </div>
+    </body>
+    </html>
