@@ -23,16 +23,6 @@ function check(){
 }
 
 
-function changestatus(){
-  var status=document.getElementById("earning");
-  if(status.innerHTML=="수입") {
-    status.innerHTML="지출";
-  }else {
-    status.innerHTML="수입";
-
-  }
-}
-
 function allowDrop(ev){
   ev.preventDefault();
 }
@@ -90,9 +80,11 @@ function drop(ev){
 
   if(ev.target.id=="earning"){
     console.log("earning");
+    document.getElementById("transType").innerHTML="수입 내역 추가";
 
   }else if(ev.target.id=="spending"){
     console.log("spending");
+    document.getElementById("transType").innerHTML="지출 내역 추가";
   }
   console.log("what");
 }

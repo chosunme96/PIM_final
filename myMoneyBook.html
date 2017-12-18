@@ -73,14 +73,13 @@
           </form>
         </div>
       </div>
-
     </div>
 
     <div id="MoneyFlow" class="modal" style="display:none">
       <div class="modal-content">
         <div class="modal-header">
           <span class="close2" onclick="closeMoneyFlow()">&times;</span>
-          <h2>card name 거래 추가</h2>
+          <h2 id="transType">거래 추가</h2>
         </div>
         <div class="modal-body">
           분류 : <input type="text" id="transCategory"/></br></br>
@@ -95,7 +94,7 @@
 
   <div class="containingbutton">
     <button type="button" class="earning" id="earning"
-    onclick="changestatus(this)" ondrop="drop(event)" ondragover="allowDrop(event)">
+    ondrop="drop(event)" ondragover="allowDrop(event)">
     수입
   </button>
   <button type="button" class="spending" id="spending"
@@ -107,7 +106,6 @@
 
 
 </div>
-
 
 <script>
 // Get the modal
