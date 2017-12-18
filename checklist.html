@@ -29,11 +29,8 @@
           <button style="display:none"><a href="checklist.html"> 메모 </a></button>
         </div>
 
-        <div class="memolist" style="border:2px solid black">
+        <div class="memolist">
           <button class="memobutton"> </button>
-          <button class="memobutton"> </button>
-          <button class="memobutton"> </button>
-
         </div>
 
         <div id="memobox" style="margin:auto; display:none;" >
@@ -54,7 +51,7 @@
           <form id="memopart">
             <textarea placeholder="Write Memo" id="memoArea" rows="4" cols="50" class="memotext"></textarea>
 
-            <button onclick="newMemo()" class="memoBtn" id="addList">메모 추가하기 </button>
+            <button class="memoBtn" id="addList" onclick="createMemo()">메모 추가하기 </button>
           </form>
 
 
@@ -62,7 +59,7 @@
             <li>추가하고 싶은 것이 있다면</li>
             <li class="checked">빈칸 안에 적어주세요</li>
             <li class="checked">할 일을 다 하면 줄을 눌러주세요</li>
-            <button onclick="newMemo()" class="memoBtn" id="addList">메모 추가하기</button>
+            <button class="memoBtn" id="addList" onclick="createMemo()">메모 추가하기</button>
           </ul>
 
 

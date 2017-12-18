@@ -9,7 +9,12 @@ function checkingfunction(id){
 
 }
 
-
+function createMemo(){
+  var memolist=document.getElementsByClassName("memolist");
+  var memo = document.createElement("button");
+  memo.className="memobutton";
+  memolist[0].appendChild(memo);
+}
 
 function check(){
   var id=document.getElementById("userid").value;
@@ -103,6 +108,7 @@ $(document).ready(function(){
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
+console.log(myNodelist.length);
 var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
