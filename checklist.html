@@ -1,28 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content="This was a Final project for Programming Interactive Media 2017-Fall." />
-    <meta name="keywords"  content="html, css, programming interactive media, final" />
-    <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no, maximum-scale=400px">
-    <meta name="robots" content="ALL" />
-    <link rel="stylesheet" type="text/css" href="PIM_final.css" />
-    <script type="text/javascript" src="PIM_final.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="This was a Final project for Programming Interactive Media 2017-Fall." />
+  <meta name="keywords"  content="html, css, programming interactive media, final" />
+  <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
+  <meta name="robots" content="ALL" />
+
+  <link rel="stylesheet" type="text/css" href="PIM_final.css" />
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="PIM_final.js"></script>
   <title>GreatMoneyBook</title>
-
 </head>
+
 <body>
-  <script type="text/javascript" src="PIM_final.js"></script>
-  <header class="myMB">
-      <h3>2017년 2학기 다카포</h3>
-  </header>
+  <div class="login logo">
+    <header class="menubar">
+      <ul class="menu">
+        <li><a href="myMoneyBook.html">수입/지출</a></li>
+        <li><a href="planmoney.html">예산</li>
+          <li style="text-decoration:underline; font-size:20px"><a href="checklist.html">메모</li>
+          </ul>
+        </header>
+
+        <div class="selectChannel">
+          <button autofocus style="display:none">수입/지출</button>
+          <button  style="display:none"><a href="planmoney.html"> 예상 예산 </a></button>
+          <button style="display:none"><a href="checklist.html"> 메모 </a></button>
+        </div>
+
+        <div class="memolist">
+          <button class="memobutton"> </button>
+        </div>
+
+        <div id="memobox" style="margin:auto; display:none;" >
+
+          <div id="myDIV" class="header">
+            <div style="text-align:left">
+            <input type="checkbox" id="normalmemo" checked onchange="setMemoType(this)">메모</input></br/>
+            <input type="checkbox" id="checklist" onchange="setMemoType(this)">체크 리스트  </input/>
+          </div>
+            <h2 style="margin:20px 0 5px 0; text-align:center" id="memotype"> 메모 </h2>
+
+            <div id="checklistpart" style="display:none">
+              <input type="text" id="myInput" placeholder="Title...">
+              <span onclick="newElement()" class="addBtn" id="addList">Add</span>
+            </div>
+          </div>
+
+          <form id="memopart">
+            <textarea placeholder="Write Memo" id="memoArea" rows="4" cols="50" class="memotext"></textarea>
+
+            <button class="memoBtn" id="addList" onclick="createMemo()">메모 추가하기 </button>
+          </form>
 
 
-    <div class="selectChannel">
-      <button><a href="myMoneyBook.html"> 수입/지출 </a></button>
-      <button ><a href="planmoney.html"> 예상 예산 </a></button>
-      <button autofocus><a href="checklist.html"> 체크리스트 </a></button>
-    </div>
+          <ul id="myUL" class="cl" style="display:none">
+            <li>추가하고 싶은 것이 있다면</li>
+            <li class="checked">빈칸 안에 적어주세요</li>
+            <li class="checked">할 일을 다 하면 줄을 눌러주세요</li>
+            <button class="memoBtn" id="addList" onclick="createMemo()">메모 추가하기</button>
+          </ul>
 
-</body>
-</html>
+
+
+        </div>
+
+
+
+      </div>
+    </body>
+    </html>
