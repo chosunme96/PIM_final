@@ -130,13 +130,15 @@ for (i = 0; i < close.length; i++) {
 
 //Problem Place
 // Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-console.log(list);
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+window.addEventListener("load", () => {
+  var list = document.getElementById('myUL');
+  console.log(list);
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
+});
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
