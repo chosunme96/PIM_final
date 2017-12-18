@@ -21,12 +21,59 @@
         <li style="text-decoration:underline; font-size:20px"><a href="searchMoneyBook.html">Other's MoneyBook</li>
       </ul>
     </header>
+    <div class="selectChannel">
+      <button style="display:none"> My MoneyBook</button>
+      <button autofocus, style="display:none"><a href="searchMoneyBook.html">Other's MoneyBook </a></button>
+    </div>
 
-    <button class="greenbuttons addMoneyBook" onclick=createMoneyBook()>
-      <!-- <img class="addMB" src="pluscard.png"> -->
-      2017년 2학기 서강연극회
+
+
+    <button id="addCode" class="greenbuttons addMoneyBook">
+        +
     </button>
-    <button class="greenbuttons addMoneyBook" onclick=createMoneyBook()>
-      <!-- <img class="addMB" src="pluscard.png"> -->
-      2017년 1학기 스터디(조선홍백곰)
-    </button>
+  </div>
+
+
+  <!-- The Modal -->
+  <div id="searchModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close1">&times;</span>
+        <h2>가계부 추가하기</h2>
+      </div>
+      <div class="modal-body">
+        가계부 코드 : <input type="text" id="mbcode" /></br></br>
+        <button class="greenbuttons" value="생성하기" onclick="searchMoneyBook()">Search</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById("searchModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("addCode");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close1")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>

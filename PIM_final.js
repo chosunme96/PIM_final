@@ -1,4 +1,6 @@
 var count=0;
+var name;
+var description;
 console.log("helloworld");
 
 function checkingfunction(id){
@@ -7,13 +9,7 @@ function checkingfunction(id){
 
 }
 
-var mb=[];
-function moneyBook(name, description, date, color){
-  this.name=name;
-  this.description=description;
-  this.date=date;
-  this.color=color;
-}
+
 
 function check(){
   var id=document.getElementById("userid").value;
@@ -26,13 +22,6 @@ function check(){
   }
 }
 
-function createMoneyBook(){
-  var name=document.getElementById("mbname").value;
-  var description=document.getElementById("mbdescription").value;
-  var date=document.getElementById("mbdate").value;
-  var color=document.getElementById("mbcolor").value;
-  mb.push(new moneyBook(name, description, date, color));
-}
 
 function changestatus(){
   var status=document.getElementById("earning");
@@ -59,9 +48,29 @@ function addTrans(){
   var amount = document.getElementById('transAmount').value;
   console.log(amount);
   var file=document.getElementById('transReceipt').image;
+}
 
+function askAuthority(){
+  document.getElementById("authority").classList.remove("greenbuttons");
+  alert("관리 승인 요청을 보냈습니다. My Money Book List에서 확인하실 수 있습니다.");
+}
 
+function searchMoneyBook(){
+  var code=document.getElementById("mbcode").value;
+  if(code=="0522"){
+    document.getElementById("addCode").innerHTML="2017년 다카포";
+    document.getElementById("searchModal").style.display="none";
+  }else{
+    alert("그런 가계부 없습니다.");
+  }
+}
 
+function sendND(){
+  name=document.getElementById("mbname").value;
+  description=document.getElementById("mbdescription").value;
+  document.getElementById("newMBName").innerHTML=name;
+  document.getElementById("newMBDescription").innerHTML=description;
+  console.log(name+description);
 }
 
 
@@ -154,6 +163,7 @@ function newElement() {
     close[i].onclick = function() {
       var div = this.parentElement;
       div.style.display = "none";
+
     };
   }
 }
