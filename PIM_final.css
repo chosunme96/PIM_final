@@ -20,22 +20,11 @@ div.selectChannel{
 }
 
 div.mywallet{
-  width:90%;
-  vertical-align:middle;
-  margin:auto;
-  display:block;
-  padding-bottom:70px;
-  max-width:700px;
-  margin-top:20px;
-  border-radius:10px;
-  overflow:hidden;
-  position:relative;
-  min-height:250px;
-  max-height:500px;
-  padding:15px 0px;
+  margin-top:30px;
+  max-width:500px;
 }
 img.walletimg{
-  width:70%;
+  width:100%;
   height:auto;
 }
 img.card{
@@ -184,6 +173,22 @@ position:absolute;
 }
 */
 
+div.mywallet{
+  vertical-align:middle;
+  margin:auto;
+  display:block;
+  padding-bottom:70px;
+  width:80%;
+  max-width:500px;
+  margin-top:20px;
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+  min-height:250px;
+  max-height:500px;
+  padding:15px 0px;
+
+}
 
 div.mywalletinner{
   vertical-align:middle;
@@ -225,7 +230,7 @@ div.mywalletinner{
   border-radius:100%;
   width:70px;
   height:70px;
-  margin-top:20%;
+  margin-top:5px;
   display:inline-block;
 }
 .containingbutton{
@@ -237,13 +242,9 @@ div.mywalletinner{
 }
 .earning{
   background-color:#008080;
-  float:left;
-  margin-right:20px;
 }
 .spending{
   background-color:red;
-  float:right;
-  margin-left:20px;
 }
 
 .summary{
