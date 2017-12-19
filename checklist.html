@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
   <meta name="robots" content="ALL" />
   <link rel="stylesheet" type="text/css" href="PIM_final.css" />
+  <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
   <script src="jquery-min.js"></script>
   <script src="PIM_final.js"></script>
   <title>GreatMoneyBook</title>
@@ -14,61 +15,54 @@
 
 <body>
   <div class="login logo">
-    <header class="menubar">
+    <header>
       <ul class="menu">
-        <li><a href="myMoneyBook.html">수입/지출</a></li>
-        <li><a href="planmoney.html">예산</li>
-          <li style="text-decoration:underline; font-size:20px"><a href="checklist.html">메모</li>
-          </ul>
-        </header>
-
-        <div class="selectChannel">
-          <button autofocus style="display:none">수입/지출</button>
-          <button  style="display:none"><a href="planmoney.html"> 예상 예산 </a></button>
-            <button style="display:none"><a href="checklist.html"> 메모 </a></button>
-    </div>
-
-    <div class="memolist">
-      <button class="memobutton"> </button>
-    </div>
-
-    <div id="memobox" style="margin:auto; display:none;">
-
-      <div id="myDIV" class="header">
-        <div style="text-align:left">
-          <input type="checkbox" id="normalmemo" checked onchange="setMemoType(this)">메모</input>
-          </br/>
-          <input type="checkbox" id="checklist" onchange="setMemoType(this)">체크 리스트
-          </input/>
-        </div>
-        <h2 style="margin:20px 0 5px 0; text-align:center" id="memotype"> 메모 </h2>
-
-        <div id="checklistpart" style="display:none">
-          <input type="text" id="myInput" placeholder="Title...">
-          <span onclick="newElement()" class="addBtn" id="addList">Add</span>
-        </div>
+        <li style="font-size:20px"><a href="myMoneyBook.html">Earn/Spend</a></li>
+        <li autofocus, style="text-decoration:underline;"><a href="checklist.html">Memo</li>
+        </ul>
+      </header>
+      <div class="selectChannel">
+        <button style="display:none;">수입/지출</button>
+        <button autofocus style="display:none"><a href="checklist.html"> Memo </a></button>
       </div>
 
-      <form id="memopart">
-        <textarea placeholder="Write Memo" id="memoArea" rows="4" cols="50" class="memotext"></textarea>
+      <h3 id="newMBName"></h3>
+      <h6 id="newMBDescription"></h6>
 
-        <button class="memoBtn" id="addList" onclick="createMemo()">메모 추가하기 </button>
-      </form>
+      <!--지갑 이미지 넣기 -->
+      <div class="memolist">
+        <button class="memobutton" style="margin-left:50px;"> </button>
+      </div>
 
+      <div id="memobox" style="margin:auto; display:none; margin-left:20px">
+        <div id="myDIV" class="header">
+          <div style="text-align:left;">
+            <input type="checkbox" id="normalmemo" checked onchange="setMemoType(this)">Memo</input>
+          </br/>
+          <input type="checkbox" id="checklist" onchange="setMemoType(this)">Check List
+        </input/>
+      </div>
+      <h2 style="margin:20px 0 5px 0; text-align:center" id="memotype"> Memo </h2>
 
-      <ul id="myUL" class="cl" style="display:none">
-        <li>추가하고 싶은 것이 있다면</li>
-        <li class="checked">빈칸 안에 적어주세요</li>
-        <li class="checked">할 일을 다 하면 줄을 눌러주세요</li>
-        <button class="memoBtn" id="addList" onclick="createMemo()">메모 추가하기</button>
-      </ul>
-
-
-
+      <div id="checklistpart" style="display:none">
+        <input type="text" id="myInput" placeholder="Title...">
+        <span onclick="newElement()" class="addBtn" id="addList">Add</span>
+      </div>
     </div>
 
+    <form id="memopart">
+      <textarea placeholder="Write Memo" id="memoArea" rows="4" cols="50" class="memotext"></textarea>
+
+      <button class="memoBtn" id="addList" onclick="createMemo()">Add Memo </button>
+    </form>
 
 
-    </div>
-  </body>
+    <ul id="myUL" class="cl" style="display:none">
+      <li class="checked">Done? Check the Line</li>
+      <button class="memoBtn" id="addList" onclick="createMemo()">Add Memo</button>
+    </ul>
+
+  </div>
+</div>
+</body>
 </html>

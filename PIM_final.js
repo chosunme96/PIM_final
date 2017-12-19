@@ -1,26 +1,33 @@
 var count=0;
 var name;
 var description;
+var balance=0;
+var type="earning";
+
 console.log("helloworld");
 
 function checkingfunction(id){
   console.log("loading function");
   console.log(id);
-
 }
 
 function createMemo(){
   var memolist=document.getElementsByClassName("memolist");
   var memo = document.createElement("button");
+  var text=document.createTextNode("contents of memo");
+  console.log(memolist);
   memo.className="memobutton";
+  memo.appendChild(text);
   memolist[0].appendChild(memo);
+  console.log(memo);
+  $("#memobox").slideUp();
 }
 
 function check(){
   var id=document.getElementById("userid").value;
   var password=document.getElementById("userpswrd").value;
   if(id=='testid' && password=='testpswrd'){
-    document.getElementById("test").innerHTML="what";
+    document.getElementById("login").innerHTML="what";
     window.open("createMoneyBook.html");
   }else{
     alert("Error Password or Username");
@@ -36,13 +43,45 @@ function drag(ev){
 }
 
 function addTrans(){
- var category=document.getElementById('transCategory').value;
- console.log(category);
- var transdate=document.getElementById('transDate').value;
- console.log(transdate);
+  var category=document.getElementById('transCategory').value;
+  console.log(category);
+  var transDate=document.getElementById('transDate').value;
+  console.log(transdate);
   var amount = document.getElementById('transAmount').value;
   console.log(amount);
   var file=document.getElementById('transReceipt').image;
+  var modal=document.getElementById("MoneyFlow");
+  console.log(modal);
+  modal.style.display="none";
+
+  var translist=document.getElementsByClassName("translist");
+  console.log(translist);
+  var transrow = document.createElement("tr");
+  var transtype=document.createElement("td");
+  var transcontent=document.createElement("td");
+  var transdate=document.createElement("td");
+  var transamount=document.createElement("td");
+  var transReceipt=document.createElement("img");
+
+  if(type=="earning"){
+    balance+=amount;
+  }else if(type=="spending"){
+    balance-=amount;
+  }
+
+  transtype.appendChild(document.createTextNode(type));
+  transcontent.appendChild(document.createTextNode(category));
+  transdate.appendChild(document.createTextNode(transDate));
+  transamount.appendChild(document.createTextNode(amount));
+  transReceipt.appendChild(document.createTextNode(file));
+  transrow.appendChild(transtype);
+  transrow.appendChild(transcontent);
+  transrow.appendChild(transdate);
+  transrow.appendChild(transamount);
+  transrow.appendChild(transReceipt);
+  translist[0].appendChild(transrow);
+  document.getElementById("balance").innerHTML="Balance : "+balance;
+
 }
 
 function askAuthority(){
@@ -54,6 +93,7 @@ function searchMoneyBook(){
   var code=document.getElementById("mbcode").value;
   if(code=="0522"){
     document.getElementById("addCode").innerHTML="2017년 다카포";
+window.open("OThersMoneyBook.html", this);
     document.getElementById("searchModal").style.display="none";
   }else{
     alert("그런 가계부 없습니다.");
@@ -83,13 +123,14 @@ function drop(ev){
 
   modal.style.display="block";
 
-  if(ev.target.id=="earning"){
+  if(ev.target.id=="earning"||ev.target.id=="earns"){
     console.log("earning");
-    document.getElementById("transType").innerHTML="수입 내역 추가";
-
+    type="earning";
+    document.getElementById("transType").innerHTML="Add Earnings";
   }else if(ev.target.id=="spending"){
     console.log("spending");
-    document.getElementById("transType").innerHTML="지출 내역 추가";
+    document.getElementById("transType").innerHTML="Add Spendings";
+    type="spending";
   }
   console.log("what");
 }
@@ -171,14 +212,14 @@ function setMemoType(memot){
   if(memot.id=="normalmemo"){
     document.getElementById("normalmemo").checked=true;
     document.getElementById("checklist").checked=false;
-    document.getElementById("memotype").innerHTML="메모";
+    document.getElementById("memotype").innerHTML="Memo";
     document.getElementById("myUL").style.display="none";
     document.getElementById("checklistpart").style.display="none";
     document.getElementById("memopart").style.display="block";
   }else if(memot.id=="checklist"){
     document.getElementById("checklist").checked=true;
     document.getElementById("normalmemo").checked=false;
-    document.getElementById("memotype").innerHTML="체크 리스트 ";
+    document.getElementById("memotype").innerHTML="Check List";
     document.getElementById("myUL").style.display="block";
     document.getElementById("checklistpart").style.display="block";
     document.getElementById("memopart").style.display="none";

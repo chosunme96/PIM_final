@@ -6,8 +6,8 @@
   <meta name="keywords"  content="html, css, programming interactive media, final" />
   <meta name="viewport" content="width=device-width,initial-scale=1, user-scalable=no">
   <meta name="robots" content="ALL" />
-  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
-
+  <script src="jquery-min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="PIM_final.css" />
   <script src="PIM_final.js"></script>
   <title>GreatMoneyBook</title>
@@ -17,35 +17,33 @@
   <div class="login logo">
     <header class="menubar">
       <ul class="menu">
-        <li><a href="createMoneyBook.html">My MoneyBook</a></li>
-        <li style="text-decoration:underline; font-size:20px"><a href="searchMoneyBook.html">Other's MoneyBook</li>
-      </ul>
-    </header>
-    <div class="selectChannel">
-      <button style="display:none"> My MoneyBook</button>
-      <button autofocus, style="display:none"><a href="searchMoneyBook.html">Other's MoneyBook </a></button>
+        <li style="font-size:20px"><a href="createMoneyBook.html">My MoneyBook</a></li>
+        <li style="text-decoration:underline;"><a href="searchMoneyBook.html">Other's MoneyBook</li>
+        </ul>
+      </header>
+      <div class="selectChannel">
+        <button style="display:none"> My MoneyBook</button>
+        <button autofocus, style="display:none"><a href="searchMoneyBook.html">Other's MoneyBook </a></button>
+      </div>
+
+      <button id="addCode" class="greenbuttons addMoneyBook">
+        +
+      </button>
     </div>
 
 
+    <!-- The Modal -->
+    <div id="searchModal" class="modal">
 
-    <button id="addCode" class="greenbuttons addMoneyBook">
-        +
-    </button>
-  </div>
-
-
-  <!-- The Modal -->
-  <div id="searchModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close1">&times;</span>
-        <h2>가계부 추가하기</h2>
-      </div>
-      <div class="modal-body">
-        가계부 코드 : <input type="text" id="mbcode" /></br></br>
-        <button class="greenbuttons" value="생성하기" onclick="searchMoneyBook()">Search</button>
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close1">&times;</span>
+          <h2>가계부 추가하기</h2>
+        </div>
+        <div class="modal-body">
+          가계부 코드 : <input type="text" id="mbcode" /></br></br>
+          <button class="greenbuttons" onclick="searchMoneyBook()">Search</button>
         </div>
       </div>
     </div>
@@ -76,4 +74,4 @@
         modal.style.display = "none";
       }
     }
-  </script>
+    </script>
