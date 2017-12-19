@@ -93,7 +93,7 @@ function searchMoneyBook(){
   var code=document.getElementById("mbcode").value;
   if(code=="0522"){
     document.getElementById("addCode").innerHTML="2017년 다카포";
-window.open("OThersMoneyBook.html", this);
+window.open("OthersMoneyBook.html", this);
     document.getElementById("searchModal").style.display="none";
   }else{
     alert("그런 가계부 없습니다.");
