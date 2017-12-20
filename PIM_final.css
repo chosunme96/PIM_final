@@ -16,6 +16,15 @@ div{
   overflow-y:auto;
 }
 
+table, th, td,tr {
+  border:2px solid black;
+  border-collapse: collapse;
+}
+table{
+  width:80%;
+  margin-left:10%;
+  margin-right:10%;
+}
 img.walletimg{
   width:100%;
   height:auto;
@@ -42,7 +51,6 @@ img.coin{
 
 .button : hover{
   background-color: #008080;
-
 }
 .appname{
   text-align:center;
@@ -50,6 +58,7 @@ img.coin{
   top:50%;
   margin-top:200px;
 }
+
 form[type=login]{
   height:auto;
   text-align:center;
@@ -82,18 +91,6 @@ form[type=login]{
   font-size:15px;
 }
 
-.pinkbuttons{
-  background-color:#ff9999;
-  border-radius:10px;
-  border:none;
-  padding:5px;
-  width:100px;
-  color:white;
-  text-align:center;
-  font-size:15px;
-
-}
-
 .greenbuttons:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -103,21 +100,6 @@ a{
   color:black;
 }
 
-
-
-
-form[name="makeMoneyBook"]{
-  margin:20px;
-  float:left;
-}
-
-
-input[name="moneyBookName"], input[name="moneyBookDate"], input[name="thumbnailImg"]{
-  height:20px;
-}
-input[name="moneyBookDescription"]{
-  height:100px;
-}
 
 input[type=id], input[type=password]{
   border: 2px solid black;
@@ -130,19 +112,6 @@ input[type="button"]{
 }
 button[type="register"]{
   border-radius:5px;
-}
-
-button.createMoneyBook{
-  width:30%;
-  height:90px;
-  margin:20px;
-  border-radius:10px;
-  border:none;
-  background-size:cover;
-  padding:auto;
-  max-width:100px;
-  min-width:100px;
-  align-items:center;
 }
 
 
@@ -177,34 +146,10 @@ div.mywalletinner{
   position:relative;
 }
 
-/* div의 padding의 maximum을 설정하는 방법은 없나?*/
-
-.addcard{
-  width:40%;
-  max-width:150px;
-  padding:4%;
-  margin-left:22%;
-  border-top-left-radius:10px;
-  border-top-right-radius: 10px;
-  display:block;
-  border-bottom-width: thick;
-}
-
-.addmoney{
-  position:absolute;
-  width:5%;
-  height:95%;
-  top:5px;
-  left:45%;
-  background-color:green;
-  border:none;
-}
-
 img.moneySaved{
   width:100%;
   height:30%;
   margin-top:50%;
-
 }
 
 .earning, .spending{
@@ -222,6 +167,7 @@ img.moneySaved{
   float:right;
   margin-right:10%;
 }
+
 img.earningArrow, img.spendingArrow{
   width:8%;
   height:8%;
@@ -236,6 +182,7 @@ img.earningArrow, img.spendingArrow{
   margin-right:15px;
 }
 
+/* can check the balance of my MoneyBook */
 .summary{
   font-size:25px;
   width:80%;
@@ -275,15 +222,11 @@ a:hover{
   text-decoration:underline;
 }
 
-
-
 .addMoneyBook{
   width:80%;
   height:30%;
   margin-bottom:30px;
 }
-
-
 
 
 /* The Modal (background) */
@@ -379,13 +322,13 @@ input[type="text"], input[type="date"]{
   background-size:cover;
   align-items:center;
   margin-left:10%;
-
 }
 
 img.cc{
   width:80%;
   height:100%;
 }
+
 .modal_card{
   overflow-y:hidden;
   width:80%;
@@ -402,6 +345,7 @@ img.cc{
   margin: 30px;
   float:left;
   background-color:white;
+  margin-left:50px;
 }
 
 #memobox{
@@ -410,10 +354,8 @@ img.cc{
   width: 40%;
   float:left;
   height: auto;
-}
-
-.memotext{
-
+  margin:auto;
+  margin-left:20px
 }
 
 /* Include the padding and border in an element's total width and height */
@@ -557,15 +499,4 @@ textarea[id="memoArea"]{
   font-size: 12px;
   cursor: pointer;
   transition: 0.3s;
-}
-
-
-table, th, td,tr {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-table{
-  width:80%;
-  margin-left:10%;
-  margin-right:10%;
 }

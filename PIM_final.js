@@ -4,25 +4,7 @@ var description;
 var balance=0;
 var type="earning";
 
-console.log("helloworld");
-
-function checkingfunction(id){
-  console.log("loading function");
-  console.log(id);
-}
-
-function createMemo(){
-  var memolist=document.getElementsByClassName("memolist");
-  var memo = document.createElement("button");
-  var text=document.createTextNode("contents of memo");
-  console.log(memolist);
-  memo.className="memobutton";
-  memo.appendChild(text);
-  memolist[0].appendChild(memo);
-  console.log(memo);
-  $("#memobox").slideUp();
-}
-
+//checking the id, password when log in
 function check(){
   var id=document.getElementById("userid").value;
   var password=document.getElementById("userpswrd").value;
@@ -34,7 +16,9 @@ function check(){
   }
 }
 
-
+//drag & drop functions for earnings/spending action.
+//drag the coin towards the piggy bank, and the 'earnings' page will pop up
+//drag the coins towards the dotted red circle, and the 'spendings' page will pop up
 function allowDrop(ev){
   ev.preventDefault();
 }
@@ -42,20 +26,66 @@ function drag(ev){
   ev.dataTransfer.setData("text", ev.target.id);
 }
 
+function drop(ev){
+  ev.preventDefault();
+  var modal=document.getElementById("MoneyFlow");
+  var span=document.getElementsByClassName("close2")[0];
+
+  modal.style.display="block";
+
+  if(ev.target.id=="earning"||ev.target.id=="earns"){
+    type="earning";
+    document.getElementById("transType").innerHTML="Add Earnings";
+  }else if(ev.target.id=="spending"){
+    document.getElementById("transType").innerHTML="Add Spendings";
+    type="spending";
+  }
+}
+
+//search for a money book another person is managing
+function searchMoneyBook(){
+  var code=document.getElementById("mbcode").value;
+  if(code=="0522"){
+    document.getElementById("addCode").innerHTML="2017년 다카포";
+    window.open("OthersMoneyBook.html", this);
+    document.getElementById("searchModal").style.display="none";
+  }else{
+    alert("그런 가계부 없습니다.");
+  }
+}
+
+
+//ask authority to manage the Money Book
+function askAuthority(){
+  document.getElementById("authority").classList.remove("greenbuttons");
+  alert("관리 승인 요청을 보냈습니다. My Money Book List에서 확인하실 수 있습니다.");
+}
+
+//sending the name and description of the new-made MoneyBook
+function sendND(){
+  name=document.getElementById("mbname").value;
+  description=document.getElementById("mbdescription").value;
+  document.getElementById("newMBName").innerHTML=name;
+  document.getElementById("newMBDescription").innerHTML=description;
+}
+
+
+//click X on the earnings/spending page, and the page disappears
+function closeMoneyFlow(){
+  var modal=document.getElementById("MoneyFlow");
+  modal.style.display="none";
+}
+
+//Writing Earnings/Spendings and it will be added to the history list
 function addTrans(){
   var category=document.getElementById('transCategory').value;
-  console.log(category);
   var transDate=document.getElementById('transDate').value;
-  console.log(transdate);
   var amount = document.getElementById('transAmount').value;
-  console.log(amount);
   var file=document.getElementById('transReceipt').image;
   var modal=document.getElementById("MoneyFlow");
-  console.log(modal);
   modal.style.display="none";
 
   var translist=document.getElementsByClassName("translist");
-  console.log(translist);
   var transrow = document.createElement("tr");
   var transtype=document.createElement("td");
   var transcontent=document.createElement("td");
@@ -81,61 +111,9 @@ function addTrans(){
   transrow.appendChild(transReceipt);
   translist[0].appendChild(transrow);
   document.getElementById("balance").innerHTML="Balance : "+balance;
-
 }
 
-function askAuthority(){
-  document.getElementById("authority").classList.remove("greenbuttons");
-  alert("관리 승인 요청을 보냈습니다. My Money Book List에서 확인하실 수 있습니다.");
-}
-
-function searchMoneyBook(){
-  var code=document.getElementById("mbcode").value;
-  if(code=="0522"){
-    document.getElementById("addCode").innerHTML="2017년 다카포";
-window.open("OthersMoneyBook.html", this);
-    document.getElementById("searchModal").style.display="none";
-  }else{
-    alert("그런 가계부 없습니다.");
-  }
-}
-
-function sendND(){
-  name=document.getElementById("mbname").value;
-  description=document.getElementById("mbdescription").value;
-  document.getElementById("newMBName").innerHTML=name;
-  document.getElementById("newMBDescription").innerHTML=description;
-  console.log(name+description);
-}
-
-
-
-function closeMoneyFlow(){
-  var modal=document.getElementById("MoneyFlow");
-  modal.style.display="none";
-}
-
-function drop(ev){
-  ev.preventDefault();
-  console.log(ev.target.id);
-  var modal=document.getElementById("MoneyFlow");
-  var span=document.getElementsByClassName("close2")[0];
-
-  modal.style.display="block";
-
-  if(ev.target.id=="earning"||ev.target.id=="earns"){
-    console.log("earning");
-    type="earning";
-    document.getElementById("transType").innerHTML="Add Earnings";
-  }else if(ev.target.id=="spending"){
-    console.log("spending");
-    document.getElementById("transType").innerHTML="Add Spendings";
-    type="spending";
-  }
-  console.log("what");
-}
-
-
+//click the white memo box, and a new memo page will slide down
 $(document).ready(function(){
   $(".memobutton").click(function(){
     if($("#memobox").is(":visible")){
@@ -149,7 +127,6 @@ $(document).ready(function(){
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
-console.log(myNodelist.length);
 var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
@@ -173,7 +150,6 @@ for (i = 0; i < close.length; i++) {
 // Add a "checked" symbol when clicking on a list item
 window.addEventListener("load", () => {
   var list = document.getElementById('myUL');
-  console.log(list);
   list.addEventListener('click', function(ev) {
     if (ev.target.tagName === 'LI') {
       ev.target.classList.toggle('checked');
@@ -208,6 +184,18 @@ function newElement() {
   }
 }
 
+//create a new Memo after clicking 'add' button
+function createMemo(){
+  var memolist=document.getElementsByClassName("memolist");
+  var memo = document.createElement("button");
+  var text=document.createTextNode("contents of memo");
+  memo.className="memobutton";
+  memo.appendChild(text);
+  memolist[0].appendChild(memo);
+  $("#memobox").slideUp();
+}
+
+//change memo type by the status checked(memo or checklist)
 function setMemoType(memot){
   if(memot.id=="normalmemo"){
     document.getElementById("normalmemo").checked=true;
@@ -224,5 +212,4 @@ function setMemoType(memot){
     document.getElementById("checklistpart").style.display="block";
     document.getElementById("memopart").style.display="none";
   }
-
 }
